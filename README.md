@@ -6,7 +6,7 @@ Well now you can anyways!
 
 **Format**
 _index.json_ (Documented)
-```json
+```js
 {
     // all HTML objects are contained within the "html" tag, notice that none of the contents are contained here, just the tags
     "html": [

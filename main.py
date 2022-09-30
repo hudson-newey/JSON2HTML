@@ -50,5 +50,3 @@ class Program:
         
         # close HTML template
         writeToFile(buildDIR + sys.argv[1][:-5:] + ".html", "</html>")
-        
-        pass

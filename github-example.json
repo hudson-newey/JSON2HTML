@@ -1,0 +1,15 @@
+{
+    "html": [
+        "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></script>",
+        "h1 class='display-4'",
+        "p"
+    ],
+
+    "style": [
+        "h1 { color: red; }",
+        "p { color: green }"
+    ],
+
+    "h1 class='display-4'": "This is contents",
+    "p": "this is some subtext"
+}

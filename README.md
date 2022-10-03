@@ -21,6 +21,9 @@ _index.json_ (Documented)
         "p { color: green }" // css styles are multi lined (for better readability)
     ],
 
-    "h1 class='display-4'": "This is contents" // the contents of the basic h1 element
+    "h1 class='display-4'": "This is contents", // the contents of the basic h1 element
+    "p": "this is some subtext"
 }
 ```
+  
+_Note: All of the comments `//` will need to be removed to successfully convert this JSON to HTML_

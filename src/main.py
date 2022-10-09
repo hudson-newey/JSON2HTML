@@ -6,7 +6,7 @@ from util import *
 BUILDDIR = "static/"
 
 def createHTMLOBJ(tag, contents):
-    litteralTag = tag[0:tag.find(" "):]
+    litteralTag = tag[0:tag.find(" ") if " " in tag else len(tag):]
     return f"<{tag}>{contents}</{litteralTag}>"
 
 # program entry point

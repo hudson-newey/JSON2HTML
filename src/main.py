@@ -28,26 +28,29 @@ if __name__ == "__main__":
 
     # read json elements
     #parse CSS from JSON file
-    for i in range(len(jsonFile["style"])):
-        writeToFile(f"{outFile}.css", jsonFile["style"][i])
+    if "style" in jsonFile:
+        for i in range(len(jsonFile["style"])):
+            writeToFile(f"{outFile}.css", jsonFile["style"][i])
 
-    # open HTML template
-    writeToFile(f"{outFile}.html", f"<html><link rel='stylesheet' href='{sys.argv[1][:-5:]}.css'>")
+        # open HTML template
+        writeToFile(f"{outFile}.html", f"<html><link rel='stylesheet' href='{sys.argv[1][:-5:]}.css'>")
+        print(f"Created File {sys.argv[1][:-5:]}.css as target.")
 
     # parse HTML from JSON file
-    for i in range(len(jsonFile["html"])):
-        HTMLToPush = ""
+    if "html" in jsonFile:
+        for i in range(len(jsonFile["html"])):
+            HTMLToPush = ""
 
-        # convert json elements into HTML elements
-        HTMLTag = jsonFile["html"][i]
+            # convert json elements into HTML elements
+            HTMLTag = jsonFile["html"][i]
 
-        if jsonFile["html"][i][:1:] == "<":
-            writeToFile(f"{outFile}.html", HTMLTag)
-        else:
-            HTMLToPush += createHTMLOBJ(HTMLTag, jsonFile[HTMLTag])
-            writeToFile(f"{outFile}.html", HTMLToPush)
-    
-    # close HTML template
-    writeToFile(f"{outFile}.html", "</html>")
+            if jsonFile["html"][i][:1:] == "<":
+                writeToFile(f"{outFile}.html", HTMLTag)
+            else:
+                HTMLToPush += createHTMLOBJ(HTMLTag, jsonFile[HTMLTag])
+                writeToFile(f"{outFile}.html", HTMLToPush)
+        
+        # close HTML template
+        writeToFile(f"{outFile}.html", "</html>")
 
-    print(f"Created File {outFile}.html as target.")
+        print(f"Created File {outFile}.html as target.")

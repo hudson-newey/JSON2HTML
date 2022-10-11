@@ -12,7 +12,9 @@ _index.json_ (Documented)
     "html": [
         "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></script>", // LITTERAL elements are all elements starting with a '<' tag, this was made so you can import external scripts and stylesheets :)
         "h1 class='display-4'", // basic h1 element with class for unique identification
-        "p" // this is an empty element, notice it still has a contents decleration
+        "p", // this is an empty element, notice it still has a contents decleration
+        "title", // example website title
+        "input type='button' value='Click Me!'" // an empty button without inner text declaration
     ],
 
     // CSS can be directly written through the "style": [] object
@@ -22,7 +24,8 @@ _index.json_ (Documented)
     ],
 
     "h1 class='display-4'": "This is contents", // the contents of the basic h1 element
-    "p": "this is some subtext"
+    "p": "this is some subtext",
+    "title": "Hello World!"
 }
 ```
   

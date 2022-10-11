@@ -47,7 +47,11 @@ if __name__ == "__main__":
             if jsonFile["html"][i][:1:] == "<":
                 writeToFile(f"{outFile}.html", HTMLTag)
             else:
-                HTMLToPush += createHTMLOBJ(HTMLTag, jsonFile[HTMLTag])
+                htmlTagContents = ""
+                if HTMLTag in jsonFile:
+                    htmlTagContents = jsonFile[HTMLTag]
+                
+                HTMLToPush += createHTMLOBJ(HTMLTag, htmlTagContents)
                 writeToFile(f"{outFile}.html", HTMLToPush)
         
         # close HTML template

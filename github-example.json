@@ -2,7 +2,9 @@
     "html": [
         "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></script>",
         "h1 class='display-4'",
-        "p"
+        "p",
+        "title",
+        "input type='button' value='Click Me!'"
     ],
 
     "style": [
@@ -11,5 +13,6 @@
     ],
 
     "h1 class='display-4'": "This is contents",
-    "p": "this is some subtext"
+    "p": "this is some subtext",
+    "title": "Hello World!"
 }

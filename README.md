@@ -23,6 +23,11 @@ _index.json_ (Documented)
         "p { color: green }" // css styles are multi lined (for better readability)
     ],
 
+    "script": [
+        "console.log('Hello World!');",
+        "console.log('If you see this message, JS is enabled!');"
+    ],
+
     "h1 class='display-4'": "This is contents", // the contents of the basic h1 element
     "p": "this is some subtext",
     "title": "Hello World!"

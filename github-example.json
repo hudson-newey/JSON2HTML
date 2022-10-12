@@ -12,6 +12,11 @@
         "p { color: green }"
     ],
 
+    "script": [
+        "console.log('Hello World!');",
+        "console.log('If you see this message, JS is enabled!');"
+    ],
+
     "h1 class='display-4'": "This is contents",
     "p": "this is some subtext",
     "title": "Hello World!"

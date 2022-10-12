@@ -29,12 +29,23 @@ if __name__ == "__main__":
     # read json elements
     #parse CSS from JSON file
     if "style" in jsonFile:
-        for i in range(len(jsonFile["style"])):
-            writeToFile(f"{outFile}.css", jsonFile["style"][i])
+        for cssLine in jsonFile["style"]:
+            writeToFile(f"{outFile}.css", cssLine)
 
         # open HTML template
         writeToFile(f"{outFile}.html", f"<html><link rel='stylesheet' href='{sys.argv[1][:-5:]}.css'>")
         print(f"Created File {sys.argv[1][:-5:]}.css as target.")
+    else:
+        writeToFile(f"{outFile}.html", "<html>")
+
+    # parse JS from JSON file
+    if "script" in jsonFile:
+        for jsLine in jsonFile["script"]:
+            writeToFile(f"{outFile}.js", jsLine)
+        
+        # open HTML template
+        writeToFile(f"{outFile}.html", f"<script src='{sys.argv[1][:-5:]}.js' defer></script>")
+        print(f"Created File {sys.argv[1][:-5:]}.js as target.")
 
     # parse HTML from JSON file
     if "html" in jsonFile:

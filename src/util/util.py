@@ -1,7 +1,7 @@
 import os, os.path
 
 def printError(message = "Unknown Error..."):
-    print(f"Error: {message}")
+    print(f"\nError: {message}")
     exit(2)
 
 def deleteSubDIR(dirPath):
@@ -17,24 +17,20 @@ def writeToFile(filePath, contents):
 def doesDirectoryExist(dirName):
     if dirName == None or dirName == "":
         printError("Directory name not specified in doesDirectoryExist() method...")
-    
+
     return os.path.isdir(dirName)
 
 def createDirectory(dirName):
     if dirName == None or dirName == "":
         printError("Directory name not specified in createDirectory() method...")
-    
+
     if not os.path.exists(dirName):
         os.makedirs(dirName)
 
 def printHelpDocs(shouldExit = True):
-    helpDocs = """
-    JSON2HTML
+    from util.constants import HELP_MESSAGE
 
-    Usage: ./JSON2HTML.sh [input file]
-    """
+    print(HELP_MESSAGE)
 
-    print(helpDocs)
-    
     if shouldExit:
-        exit(2)
+        printError("Bad usage...")

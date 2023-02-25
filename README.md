@@ -10,9 +10,9 @@ _index.json_ (Documented)
 {
     // all HTML objects are contained within the "html" tag, notice that none of the contents are contained here, just the tags
     "html": [
-        "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></script>", // LITTERAL elements are all elements starting with a '<' tag, this was made so you can import external scripts and stylesheets :)
+        "<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></script>", // LITERAL elements are all elements starting with a '<' tag, this was made so you can import external scripts and stylesheets :)
         "h1 class='display-4'", // basic h1 element with class for unique identification
-        "p", // this is an empty element, notice it still has a contents decleration
+        "p", // this is an empty element, notice it still has a contents deceleration
         "title", // example website title
         "input type='button' value='Click Me!'" // an empty button without inner text declaration
     ],
@@ -33,5 +33,3 @@ _index.json_ (Documented)
     "title": "Hello World!"
 }
 ```
-  
-_Note: All of the comments `//` will need to be removed to successfully convert this JSON to HTML_

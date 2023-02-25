@@ -1,13 +1,12 @@
 import json
 import sys
 
-from util import *
-
-BUILDDIR = "static/"
+from util.util import printHelpDocs, deleteSubDIR, createDirectory, doesDirectoryExist, writeToFile
+from util.constants import BUILD_DIRECTORY, BUILD_PATH
 
 def createHTMLOBJ(tag, contents):
-    litteralTag = tag[0:tag.find(" ") if " " in tag else len(tag):]
-    return f"<{tag}>{contents}</{litteralTag}>"
+    literalTag = tag[0:tag.find(" ") if " " in tag else len(tag):]
+    return f"<{tag}>{contents}</{literalTag}>"
 
 # program entry point
 if __name__ == "__main__":
@@ -16,15 +15,15 @@ if __name__ == "__main__":
         printHelpDocs()
 
     # delete all previously built files
-    deleteSubDIR(BUILDDIR)
+    deleteSubDIR(BUILD_PATH)
 
     # define json file to read
     jsonFile = json.loads(open(sys.argv[1]).read())
-    outFile = BUILDDIR + sys.argv[1][:-5:]
+    outFile = BUILD_PATH + sys.argv[1][:-5:]
 
     # check that the static directory exists
-    if not doesDirectoryExist("static"):
-        createDirectory("static")
+    if not doesDirectoryExist(BUILD_DIRECTORY):
+        createDirectory(BUILD_DIRECTORY)
 
     # read json elements
     #parse CSS from JSON file
@@ -42,7 +41,7 @@ if __name__ == "__main__":
     if "script" in jsonFile:
         for jsLine in jsonFile["script"]:
             writeToFile(f"{outFile}.js", jsLine)
-        
+
         # open HTML template
         writeToFile(f"{outFile}.html", f"<script src='{sys.argv[1][:-5:]}.js' defer></script>")
         print(f"Created File {sys.argv[1][:-5:]}.js as target.")
@@ -61,10 +60,10 @@ if __name__ == "__main__":
                 htmlTagContents = ""
                 if HTMLTag in jsonFile:
                     htmlTagContents = jsonFile[HTMLTag]
-                
+
                 HTMLToPush += createHTMLOBJ(HTMLTag, htmlTagContents)
                 writeToFile(f"{outFile}.html", HTMLToPush)
-        
+
         # close HTML template
         writeToFile(f"{outFile}.html", "</html>")
 

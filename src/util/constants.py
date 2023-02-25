@@ -1,0 +1,7 @@
+BUILD_DIRECTORY = "static"
+BUILD_PATH = f"{BUILD_DIRECTORY}/"
+
+HELP_MESSAGE = """
+JSON2HTML
+Usage: ./JSON2HTML.sh [input file]
+"""

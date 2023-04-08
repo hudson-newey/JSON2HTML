@@ -4,8 +4,10 @@ Have you ever wanted to write your HTML in JSON format? No?
 
 Well now you can anyways!
 
-**Format**
-_index.json_ (Documented)
+## Markup Format
+
+_github-example.json_ (Documented)
+
 ```js
 {
     // all HTML objects are contained within the "html" tag, notice that none of the contents are contained here, just the tags
@@ -33,3 +35,13 @@ _index.json_ (Documented)
     "title": "Hello World!"
 }
 ```
+
+## Usage
+
+```sh
+./JSON2HTML.sh <json_file>
+```
+
+## Video Example (Bootstrap Example)
+
+[![asciicast](https://asciinema.org/a/xqWSM82Xgx73xY5ASIC9sxbZq.svg)](https://asciinema.org/a/xqWSM82Xgx73xY5ASIC9sxbZq)
